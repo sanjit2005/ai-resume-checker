@@ -15,9 +15,9 @@ export function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/10 backdrop-blur-md"
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/8 border border-[rgba(255,180,130,0.2)] backdrop-blur-md"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-[#8FB39C]" />
+          <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
           <span className="text-[11px] tracking-wide text-white/85 uppercase font-semibold">
             Free forever for your first 3 analyses
           </span>
@@ -28,7 +28,7 @@ export function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.05 }}
-          className="font-display text-[36px] sm:text-[52px] lg:text-[64px] leading-[1.04] tracking-tight text-white mt-6 max-w-3xl mx-auto"
+          className="font-display text-[36px] sm:text-[52px] lg:text-[64px] leading-[1.04] tracking-tight text-white mt-6 max-w-3xl mx-auto font-bold"
         >
           Stop guessing what
           <br />
@@ -36,7 +36,7 @@ export function CTASection() {
           <span
             style={{
               backgroundImage:
-                "linear-gradient(120deg, #B6CFC0 0%, #8FB39C 50%, #5B7C6A 100%)",
+                "linear-gradient(120deg, #FFB380 0%, #E86A33 50%, #FF7A29 100%)",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               WebkitTextFillColor: "transparent",
@@ -52,7 +52,7 @@ export function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-white/65 text-base sm:text-lg mt-5 max-w-xl mx-auto leading-relaxed"
+          className="text-[#A4988C] text-base sm:text-lg mt-5 max-w-xl mx-auto leading-relaxed"
         >
           Upload your resume now. Get your ATS score, fixable issues, and AI rewrites
           in under 15 seconds.
@@ -67,10 +67,10 @@ export function CTASection() {
         >
           <Link
             to="/register"
-            className="group relative inline-flex items-center gap-2 h-12 px-6 rounded-full font-semibold text-[14px] text-white shadow-[0_10px_30px_-8px_rgba(143,179,156,0.5)] hover:shadow-[0_14px_36px_-8px_rgba(143,179,156,0.7)] active:scale-[0.98] transition-all"
+            className="group relative inline-flex items-center gap-2 h-12 px-7 rounded-full font-semibold text-[14px] text-white shadow-[0_10px_30px_-8px_rgba(232,106,51,0.6)] hover:shadow-[0_14px_36px_-8px_rgba(232,106,51,0.8)] hover:brightness-110 active:scale-[0.98] transition-all"
             style={{
               background:
-                "linear-gradient(135deg, #8FB39C 0%, #5B7C6A 55%, #2F4A3A 100%)",
+                "linear-gradient(135deg, #FF884D 0%, #E86A33 55%, #C44E1C 100%)",
             }}
           >
             <span
@@ -86,7 +86,7 @@ export function CTASection() {
 
           <Link
             to="/login"
-            className="inline-flex items-center gap-2 h-12 px-5 rounded-full font-medium text-[14px] text-white bg-white/8 border border-white/12 backdrop-blur-md hover:bg-white/12 transition-colors"
+            className="inline-flex items-center gap-2 h-12 px-6 rounded-full font-medium text-[14px] text-white bg-white/8 border border-white/12 backdrop-blur-md hover:bg-white/12 transition-colors"
           >
             I already have an account
           </Link>
@@ -99,7 +99,7 @@ export function CTASection() {
           transition={{ duration: 0.6, delay: 0.25 }}
           className="mt-6 inline-flex items-center gap-1.5 text-[12px] text-white/50"
         >
-          <ShieldCheck size={13} className="text-[#8FB39C]" />
+          <ShieldCheck size={13} className="text-[var(--accent-strong)]" />
           No credit card · We never store your resume PDF
         </motion.div>
       </DarkPanel>

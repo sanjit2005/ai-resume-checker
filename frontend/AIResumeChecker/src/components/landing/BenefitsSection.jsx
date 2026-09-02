@@ -56,11 +56,11 @@ export function BenefitsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, delay: i * 0.05 }}
-            className={`rounded-[22px] bg-[var(--surface)] border border-[var(--border)] shadow-card hover:shadow-hover transition-all p-5 sm:p-6 ${
+            className={`rounded-[24px] bg-[var(--surface)] border border-[var(--border)] shadow-card hover:shadow-hover hover:border-[rgba(255,180,130,0.2)] transition-all p-5 sm:p-6 ${
               i === 0 ? "lg:col-span-3" : i === 1 ? "lg:col-span-3" : "lg:col-span-2"
             }`}
           >
-            <div className="h-10 w-10 rounded-2xl bg-[var(--accent-soft)] text-[var(--accent-strong)] flex items-center justify-center mb-4">
+            <div className="h-10 w-10 rounded-2xl bg-[var(--accent-soft)] text-[var(--accent-strong)] border border-[var(--accent)]/20 flex items-center justify-center mb-4">
               <b.icon size={16} strokeWidth={2.25} />
             </div>
             <h3 className="font-display text-[17px] font-semibold tracking-tight text-[var(--ink)]">

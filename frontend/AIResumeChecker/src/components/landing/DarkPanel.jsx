@@ -6,58 +6,64 @@ const NOISE_DATA_URI =
 export function DarkPanel({ className = "", children, glow = true, radius = "rounded-[32px]" }) {
   return (
     <div className={`relative overflow-hidden isolate ${radius} ${className}`}>
+      {/* Base rich dark espresso gradient */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(140deg, #18271F 0%, #2F4A3A 38%, #1A2B22 72%, #0E1812 100%)",
+            "linear-gradient(140deg, #18110D 0%, #251710 38%, #1B120D 72%, #0E0A08 100%)",
         }}
       />
 
       {glow && (
         <>
+          {/* Top-right warm amber radial glow */}
           <motion.div
-            className="absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full pointer-events-none"
+            className="absolute -top-32 -right-32 w-[540px] h-[540px] rounded-full pointer-events-none"
             style={{
               background:
-                "radial-gradient(circle, rgba(168,196,179,0.45) 0%, transparent 70%)",
-              filter: "blur(60px)",
+                "radial-gradient(circle, rgba(255,140,70,0.32) 0%, rgba(232,106,51,0.12) 40%, transparent 70%)",
+              filter: "blur(70px)",
             }}
-            animate={{ x: [0, 30, 0], y: [0, 20, 0], opacity: [0.45, 0.7, 0.45] }}
+            animate={{ x: [0, 30, 0], y: [0, 20, 0], opacity: [0.55, 0.85, 0.55] }}
             transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
           />
+          {/* Bottom-left warm copper/amber radial glow */}
           <motion.div
-            className="absolute -bottom-40 -left-32 w-[460px] h-[460px] rounded-full pointer-events-none"
+            className="absolute -bottom-40 -left-32 w-[480px] h-[480px] rounded-full pointer-events-none"
             style={{
               background:
-                "radial-gradient(circle, rgba(91,124,106,0.55) 0%, transparent 70%)",
-              filter: "blur(60px)",
+                "radial-gradient(circle, rgba(232,106,51,0.35) 0%, rgba(196,78,28,0.15) 45%, transparent 70%)",
+              filter: "blur(70px)",
             }}
-            animate={{ x: [0, -25, 0], y: [0, -30, 0], opacity: [0.4, 0.65, 0.4] }}
+            animate={{ x: [0, -25, 0], y: [0, -30, 0], opacity: [0.45, 0.75, 0.45] }}
             transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
           />
         </>
       )}
 
+      {/* Subtle light sheen */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(135deg, transparent 30%, rgba(255,255,255,0.05) 50%, transparent 70%)",
+            "linear-gradient(135deg, transparent 30%, rgba(255,200,160,0.04) 50%, transparent 70%)",
           backgroundSize: "200% 200%",
         }}
         animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
       />
 
+      {/* Subtle noise grain */}
       <div
-        className="absolute inset-0 opacity-[0.06] mix-blend-overlay pointer-events-none"
+        className="absolute inset-0 opacity-[0.05] mix-blend-overlay pointer-events-none"
         style={{ backgroundImage: NOISE_DATA_URI }}
       />
 
+      {/* Inner ambient vignette */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ boxShadow: "inset 0 0 120px 20px rgba(0,0,0,0.35)" }}
+        style={{ boxShadow: "inset 0 0 140px 30px rgba(0,0,0,0.5)" }}
       />
 
       <div className="relative z-10 h-full">{children}</div>

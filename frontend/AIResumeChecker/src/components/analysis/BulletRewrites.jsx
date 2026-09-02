@@ -12,7 +12,7 @@ function GradientNumber({ value, size = 32 }) {
       style={{
         fontSize: size,
         backgroundImage:
-          "linear-gradient(135deg, #B6CFC0 0%, var(--accent) 45%, var(--accent-strong) 100%)",
+          "linear-gradient(135deg, #FFB380 0%, var(--accent) 45%, var(--accent-strong) 100%)",
         WebkitBackgroundClip: "text",
         backgroundClip: "text",
         color: "transparent",
@@ -84,7 +84,7 @@ export function BulletRewrites({ rewrites, onApply, isApplying, error }) {
             "linear-gradient(135deg, var(--accent-soft) 0%, var(--surface-2) 70%, var(--surface) 100%)",
         }}
       >
-        {/* Decorative sage rings */}
+        {/* Decorative accent rings */}
         <svg
           className="absolute -top-8 -right-8 pointer-events-none opacity-50"
           width="160"
@@ -159,13 +159,13 @@ export function BulletRewrites({ rewrites, onApply, isApplying, error }) {
               )}
               Apply selected
             </Button>
-            <div
-              className="rounded-full p-[1.5px]"
-              style={{
-                background:
-                  "linear-gradient(135deg, #B6CFC0 0%, var(--accent) 45%, var(--accent-strong) 100%)",
-              }}
-            >
+              <div
+                className="rounded-full p-[1.5px]"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #FFB380 0%, var(--accent) 45%, var(--accent-strong) 100%)",
+                }}
+              >
               <Button
                 variant="accent"
                 size="sm"

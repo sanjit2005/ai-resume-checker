@@ -22,12 +22,12 @@ export function AuthShell({ children, headline, subhead }) {
 function BrandPanel({ headline, subhead }) {
   return (
     <div className="hidden lg:block flex-1 relative rounded-[28px] overflow-hidden isolate">
-      {/* Base dark gradient */}
+      {/* Base espresso dark gradient */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(140deg, #18271F 0%, #2F4A3A 38%, #1A2B22 72%, #0E1812 100%)",
+            "linear-gradient(140deg, #1A110B 0%, #2A1B13 38%, #1C120B 72%, #0E0A08 100%)",
         }}
       />
 
@@ -36,13 +36,13 @@ function BrandPanel({ headline, subhead }) {
         className="absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(168,196,179,0.55) 0%, transparent 70%)",
-          filter: "blur(60px)",
+            "radial-gradient(circle, rgba(255,140,70,0.38) 0%, rgba(232,106,51,0.15) 45%, transparent 70%)",
+          filter: "blur(70px)",
         }}
         animate={{
           x: [0, 40, 0],
           y: [0, 25, 0],
-          opacity: [0.45, 0.75, 0.45],
+          opacity: [0.55, 0.85, 0.55],
         }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -50,13 +50,13 @@ function BrandPanel({ headline, subhead }) {
         className="absolute -bottom-40 -left-32 w-[460px] h-[460px] rounded-full pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(91,124,106,0.6) 0%, transparent 70%)",
-          filter: "blur(60px)",
+            "radial-gradient(circle, rgba(232,106,51,0.4) 0%, transparent 70%)",
+          filter: "blur(70px)",
         }}
         animate={{
           x: [0, -30, 0],
           y: [0, -40, 0],
-          opacity: [0.4, 0.7, 0.4],
+          opacity: [0.45, 0.75, 0.45],
         }}
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -66,7 +66,7 @@ function BrandPanel({ headline, subhead }) {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(135deg, transparent 30%, rgba(255,255,255,0.07) 50%, transparent 70%)",
+            "linear-gradient(135deg, transparent 30%, rgba(255,200,160,0.06) 50%, transparent 70%)",
           backgroundSize: "200% 200%",
         }}
         animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
@@ -75,7 +75,7 @@ function BrandPanel({ headline, subhead }) {
 
       {/* Noise grain overlay */}
       <div
-        className="absolute inset-0 opacity-[0.06] mix-blend-overlay pointer-events-none"
+        className="absolute inset-0 opacity-[0.05] mix-blend-overlay pointer-events-none"
         style={{ backgroundImage: NOISE_DATA_URI }}
       />
 
@@ -83,7 +83,7 @@ function BrandPanel({ headline, subhead }) {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          boxShadow: "inset 0 0 120px 20px rgba(0,0,0,0.35)",
+          boxShadow: "inset 0 0 140px 30px rgba(0,0,0,0.5)",
         }}
       />
 
@@ -95,10 +95,10 @@ function BrandPanel({ headline, subhead }) {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="px-10 xl:px-16"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/10 backdrop-blur-md">
-            <Sparkles size={12} className="text-white/80" />
-            <span className="text-[11px] tracking-wide text-white/80 uppercase font-semibold">
-              AI Resume Roaster
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-[rgba(255,180,130,0.2)] backdrop-blur-md">
+            <Sparkles size={12} className="text-[var(--accent-strong)]" />
+            <span className="text-[11px] tracking-wide text-white/90 uppercase font-semibold">
+              BotBeat
             </span>
           </div>
 
@@ -113,7 +113,7 @@ function BrandPanel({ headline, subhead }) {
             {headline}
           </h2>
 
-          <p className="text-white/65 text-base xl:text-lg mt-6 max-w-md leading-relaxed">
+          <p className="text-[#A4988C] text-base xl:text-lg mt-6 max-w-md leading-relaxed">
             {subhead}
           </p>
         </motion.div>
@@ -155,10 +155,10 @@ export function AuthField({
           minLength={minLength}
           className={`peer w-full h-12 ${
             Icon ? "pl-11 pr-4" : "px-4"
-          } rounded-2xl border border-[var(--border)] bg-[var(--surface)] text-[15px] text-[var(--ink)] placeholder:text-[var(--ink-muted)]/60 outline-none transition-all duration-200 focus:border-[var(--accent)]/40 focus:ring-4 focus:ring-[var(--accent)]/10`}
+          } rounded-2xl border border-[var(--border)] bg-[var(--surface)] text-[15px] text-[var(--ink)] placeholder:text-[var(--ink-muted)]/60 outline-none transition-all duration-200 focus:border-[var(--accent)]/60 focus:ring-4 focus:ring-[var(--accent)]/15`}
         />
         {Icon && (
-          <div className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[var(--ink-muted)]/55 peer-focus:text-[var(--accent-strong)] peer-[:not(:placeholder-shown)]:text-[var(--accent-strong)] transition-colors">
+          <div className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[var(--ink-muted)] peer-focus:text-[var(--accent-strong)] peer-[:not(:placeholder-shown)]:text-[var(--accent-strong)] transition-colors">
             <Icon size={16} strokeWidth={2} />
           </div>
         )}
@@ -172,10 +172,10 @@ export function AuthPrimaryButton({ children, disabled, ...props }) {
     <motion.button
       whileTap={{ scale: 0.985 }}
       disabled={disabled}
-      className="relative w-full h-12 rounded-2xl text-white font-semibold text-[15px] flex items-center justify-center gap-2 overflow-hidden shadow-[0_8px_24px_-8px_rgba(47,74,58,0.55)] transition-all duration-200 hover:shadow-[0_12px_28px_-8px_rgba(47,74,58,0.7)] disabled:opacity-60 disabled:cursor-not-allowed"
+      className="relative w-full h-12 rounded-2xl text-white font-semibold text-[15px] flex items-center justify-center gap-2 overflow-hidden shadow-[0_8px_24px_-8px_rgba(232,106,51,0.6)] transition-all duration-200 hover:shadow-[0_12px_28px_-8px_rgba(232,106,51,0.8)] hover:brightness-110 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
       style={{
         background:
-          "linear-gradient(135deg, #5B7C6A 0%, #3A5C49 50%, #2F4A3A 100%)",
+          "linear-gradient(135deg, #FF884D 0%, #E86A33 55%, #C44E1C 100%)",
       }}
       {...props}
     >
@@ -184,7 +184,7 @@ export function AuthPrimaryButton({ children, disabled, ...props }) {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(180deg, rgba(255,255,255,0.18) 0%, transparent 50%)",
+            "linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 50%)",
         }}
       />
       <span className="relative z-10 inline-flex items-center gap-2">
@@ -200,7 +200,7 @@ export function AuthErrorBanner({ children }) {
     <motion.div
       initial={{ opacity: 0, y: -4 }}
       animate={{ opacity: 1, y: 0 }}
-      className="text-xs text-[var(--danger)] bg-[#F8E3E0] rounded-2xl px-4 py-2.5 leading-snug"
+      className="text-xs text-[var(--danger)] bg-[rgba(240,93,94,0.12)] border border-[var(--danger)]/25 rounded-2xl px-4 py-2.5 leading-snug"
     >
       {children}
     </motion.div>

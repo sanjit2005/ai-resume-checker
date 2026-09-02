@@ -67,7 +67,7 @@ export function KeywordChips({ present = [], missing = [] }) {
             "linear-gradient(135deg, var(--accent-soft) 0%, var(--surface-2) 70%, var(--surface) 100%)",
         }}
       >
-        {/* Decorative dashed sage arc, top right */}
+        {/* Decorative dashed accent arc, top right */}
         <svg
           className="absolute -top-6 -right-6 pointer-events-none opacity-50"
           width="140"
@@ -97,7 +97,7 @@ export function KeywordChips({ present = [], missing = [] }) {
                 className="font-display tabular-nums text-[44px] font-semibold leading-none tracking-tight"
                 style={{
                   backgroundImage:
-                    "linear-gradient(135deg, #B6CFC0 0%, var(--accent) 45%, var(--accent-strong) 100%)",
+                    "linear-gradient(135deg, #FFB380 0%, var(--accent) 45%, var(--accent-strong) 100%)",
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
                   color: "transparent",

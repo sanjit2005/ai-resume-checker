@@ -8,11 +8,11 @@ import {
 } from "@react-pdf/renderer";
 
 const C = {
-  ink: "#111418",
-  inkMuted: "#5C6470",
-  accent: "#2F4A3A",
-  accentSoft: "#E6EFE8",
-  hairline: "#E5E5DF",
+  ink: "#1A1410",
+  inkMuted: "#6B5E52",
+  accent: "#C44E1C",
+  accentSoft: "#FDEEE6",
+  hairline: "#EADFD5",
   bg: "#FFFFFF",
 };
 

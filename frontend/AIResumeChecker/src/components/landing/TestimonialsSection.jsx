@@ -5,7 +5,7 @@ import { SectionHeader } from "./FeaturesSection";
 const TESTIMONIALS = [
   {
     quote:
-      "I'd been ghosted by 40+ companies. Ran my resume through Roaster, fixed 6 issues, and landed 3 onsites in two weeks.",
+      "I'd been ghosted by 40+ companies. Ran my resume through BotBeat, fixed 6 issues, and landed 3 onsites in two weeks.",
     name: "Priya Raman",
     role: "Senior Frontend Engineer",
     company: "Stripe",
@@ -73,18 +73,18 @@ export function TestimonialsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, delay: (i % 3) * 0.05 }}
-            className="rounded-[22px] bg-[var(--surface)] border border-[var(--border)] shadow-card hover:shadow-hover transition-all p-5 sm:p-6 flex flex-col"
+            className="rounded-[24px] bg-[var(--surface)] border border-[var(--border)] shadow-card hover:shadow-hover hover:border-[rgba(255,180,130,0.2)] transition-all p-5 sm:p-6 flex flex-col"
           >
-            <div className="flex gap-0.5 text-[var(--accent)] mb-3">
+            <div className="flex gap-1 text-[var(--accent)] mb-3">
               {Array.from({ length: 5 }).map((_, k) => (
-                <Star key={k} size={13} fill="currentColor" strokeWidth={0} />
+                <Star key={k} size={14} fill="currentColor" strokeWidth={0} />
               ))}
             </div>
             <p className="text-[14px] text-[var(--ink)] leading-relaxed flex-1">
               "{t.quote}"
             </p>
             <div className="flex items-center gap-3 mt-5 pt-4 border-t border-[var(--border)]">
-              <div className="h-9 w-9 rounded-full bg-[var(--accent-strong)] text-white flex items-center justify-center font-display text-[12px] font-semibold tabular">
+              <div className="h-9 w-9 rounded-full bg-gradient-to-br from-[var(--accent)] to-[var(--accent-strong)] text-white flex items-center justify-center font-display text-[12px] font-bold tabular shadow-sm">
                 {t.initials}
               </div>
               <div className="min-w-0">

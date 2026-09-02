@@ -23,10 +23,10 @@ const NAV = [
 const ROW_BASE =
   "relative flex items-center h-11 w-11 rounded-2xl overflow-hidden " +
   "group-hover/sidebar:w-[200px] " +
-  "transition-[width,background-color,color,box-shadow] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]";
+  "transition-[width,background-color,color,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]";
 
 const LABEL_BASE =
-  "text-sm font-medium whitespace-nowrap pr-4 " +
+  "text-sm font-semibold whitespace-nowrap pr-4 " +
   "opacity-0 -translate-x-1 " +
   "transition-[opacity,transform] duration-200 ease-out " +
   "group-hover/sidebar:opacity-100 group-hover/sidebar:translate-x-0 group-hover/sidebar:delay-100";
@@ -39,12 +39,12 @@ function NavItem({ to, icon: Icon, label }) {
           className={cn(
             ROW_BASE,
             isActive
-              ? "bg-[var(--ink)] text-[var(--bg)] shadow-card"
+              ? "bg-[var(--accent-soft)] text-[var(--accent-strong)] border border-[var(--accent)]/30 shadow-card"
               : "text-[var(--ink-muted)] hover:bg-[var(--surface-2)] hover:text-[var(--ink)]",
           )}
         >
           <span className="h-11 w-11 flex items-center justify-center shrink-0">
-            <Icon size={18} strokeWidth={2} />
+            <Icon size={18} strokeWidth={2.2} />
           </span>
           <span className={LABEL_BASE}>{label}</span>
         </div>
@@ -59,12 +59,12 @@ function ActionRow({ icon: Icon, label, onClick, to }) {
       className={cn(
         ROW_BASE,
         isActive
-          ? "bg-[var(--ink)] text-[var(--bg)] shadow-card"
+          ? "bg-[var(--accent-soft)] text-[var(--accent-strong)] border border-[var(--accent)]/30 shadow-card"
           : "text-[var(--ink-muted)] hover:bg-[var(--surface-2)] hover:text-[var(--ink)]"
       )}
     >
       <span className="h-11 w-11 flex items-center justify-center shrink-0">
-        <Icon size={18} />
+        <Icon size={18} strokeWidth={2} />
       </span>
       <span className={LABEL_BASE}>{label}</span>
     </div>
@@ -79,7 +79,7 @@ function ActionRow({ icon: Icon, label, onClick, to }) {
   }
 
   return (
-    <button onClick={onClick} title={label} className="block">
+    <button onClick={onClick} title={label} className="block cursor-pointer">
       {inner(false)}
     </button>
   );
@@ -97,28 +97,28 @@ export function Sidebar() {
         "flex-col items-center justify-between py-5 rounded-3xl",
         "bg-[var(--surface)] border border-[var(--border)] shadow-card overflow-hidden",
         "w-[88px] hover:w-[248px]",
-        "transition-[width] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
+        "transition-[width] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] z-40",
       )}
     >
       <div className="flex flex-col items-center gap-6 w-full">
         <div
           className={cn(
-            "flex items-center h-14 w-14 group-hover/sidebar:w-[200px]",
+            "flex items-center h-14 w-14 group-hover/sidebar:w-[200px] pl-1",
             "transition-[width] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
           )}
         >
           <div className="h-12 w-12 flex items-center justify-center shrink-0">
-            <AILogo />
+            <AILogo size={36} />
           </div>
           <span
             className={cn(
-              "ml-2 font-display text-base font-semibold text-[var(--ink)] whitespace-nowrap",
+              "ml-2 font-display text-[16px] font-bold text-[var(--ink)] whitespace-nowrap",
               "opacity-0 -translate-x-1",
               "transition-[opacity,transform] duration-200 ease-out",
               "group-hover/sidebar:opacity-100 group-hover/sidebar:translate-x-0 group-hover/sidebar:delay-100",
             )}
           >
-            Roaster
+            Bot<span className="text-[var(--accent)]">Beat</span>
           </span>
         </div>
 
@@ -139,8 +139,8 @@ export function Sidebar() {
             "transition-[width] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
           )}
         >
-          <div className="h-10 w-10 rounded-full bg-[var(--accent-soft)] text-[var(--accent-strong)] font-semibold flex items-center justify-center text-sm ring-2 ring-[var(--surface)] shrink-0">
-            {user?.name?.[0]?.toUpperCase() || "R"}
+          <div className="h-10 w-10 rounded-full bg-[var(--accent-soft)] text-[var(--accent-strong)] font-semibold flex items-center justify-center text-sm ring-2 ring-[var(--surface)] border border-[var(--accent)]/25 shrink-0">
+            {user?.name?.[0]?.toUpperCase() || "B"}
           </div>
           <div
             className={cn(

@@ -32,7 +32,7 @@ export function TabsTrigger({ value, children, className }) {
     <button
       onClick={() => ctx.onValueChange(value)}
       className={cn(
-        "relative px-3.5 h-8 text-xs font-medium rounded-full transition-colors",
+        "relative px-3.5 h-8 text-xs font-semibold rounded-full transition-colors cursor-pointer select-none",
         active ? "text-[var(--bg)]" : "text-[var(--ink-muted)] hover:text-[var(--ink)]",
         className
       )}
@@ -40,8 +40,8 @@ export function TabsTrigger({ value, children, className }) {
       {active && (
         <motion.span
           layoutId="tab-active"
-          className="absolute inset-0 rounded-full bg-[var(--ink)]"
-          transition={{ type: "spring", duration: 0.4, bounce: 0.18 }}
+          className="absolute inset-0 rounded-full bg-[var(--ink)] shadow-sm"
+          transition={{ type: "spring", duration: 0.35, bounce: 0.15 }}
         />
       )}
       <span className="relative z-10">{children}</span>

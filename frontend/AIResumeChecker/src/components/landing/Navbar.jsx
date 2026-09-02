@@ -17,7 +17,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -33,42 +33,45 @@ export function Navbar() {
       <div
         style={{ maxWidth: 1240, marginLeft: "auto", marginRight: "auto" }}
         className={cn(
-          "rounded-xl md:rounded-full border transition-all duration-300",
+          "rounded-2xl md:rounded-full border transition-all duration-300",
           scrolled
-            ? "bg-[var(--surface)]/85 border-[var(--border)] backdrop-blur-xl shadow-card"
-            : "bg-[var(--surface)]/95 border-transparent backdrop-blur-md",
+            ? "bg-[#140E0A]/90 border-[rgba(255,180,130,0.14)] backdrop-blur-xl shadow-[0_12px_32px_-8px_rgba(0,0,0,0.7)]"
+            : "bg-[#140E0A]/75 border-[rgba(255,180,130,0.08)] backdrop-blur-md",
         )}
       >
         <div className="flex items-center justify-between gap-4 px-3 sm:px-4 py-2">
-          <Link to="/" className="flex items-center gap-2.5 pl-1">
-            <AILogo />
-            <span className="font-display text-[15px] font-semibold tracking-tight text-[var(--ink)] hidden sm:inline">
-              Resume Roaster
+          {/* Brand Logo & Name */}
+          <Link to="/" className="flex items-center gap-2.5 pl-1 group">
+            <AILogo size={34} />
+            <span className="font-display text-[16px] font-bold tracking-tight text-[#FAF5EE] flex items-center gap-1">
+              Bot<span className="text-[var(--accent)]">Beat</span>
             </span>
           </Link>
 
+          {/* Nav items */}
           <nav className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
             {NAV_LINKS.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="px-3.5 py-1.5 rounded-full text-[13px] font-medium text-[var(--ink-muted)] hover:text-[var(--ink)] hover:bg-[var(--surface-2)] transition-colors"
+                className="px-3.5 py-1.5 rounded-full text-[13px] font-medium text-[#A4988C] hover:text-[#FAF5EE] hover:bg-white/5 transition-colors"
               >
                 {l.label}
               </a>
             ))}
           </nav>
 
+          {/* Action CTAs */}
           <div className="flex items-center gap-2">
             <Link
               to="/login"
-              className="hidden sm:inline-flex h-9 px-4 rounded-full text-[13px] font-medium text-[var(--ink)] hover:bg-[var(--surface-2)] items-center transition-colors"
+              className="hidden sm:inline-flex h-9 px-4 rounded-full text-[13px] font-medium text-[#FAF5EE] hover:bg-white/8 items-center transition-colors"
             >
               Sign in
             </Link>
             <Link
               to="/register"
-              className="group inline-flex items-center gap-1.5 h-9 pl-4 pr-3.5 rounded-full bg-[var(--ink)] text-[var(--bg)] text-[13px] font-semibold hover:opacity-90 active:scale-[0.98] transition-all"
+              className="group relative inline-flex items-center gap-1.5 h-9 pl-4 pr-3.5 rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-strong)] text-white text-[13px] font-semibold hover:brightness-110 active:scale-[0.98] transition-all shadow-[0_4px_16px_-4px_rgba(232,106,51,0.5)]"
             >
               Get started
               <ArrowRight
@@ -78,7 +81,7 @@ export function Navbar() {
             </Link>
             <button
               onClick={() => setOpen((o) => !o)}
-              className="md:hidden h-9 w-9 rounded-full flex items-center justify-center text-[var(--ink)] hover:bg-[var(--surface-2)]"
+              className="md:hidden h-9 w-9 rounded-full flex items-center justify-center text-[#FAF5EE] hover:bg-white/8"
               aria-label="Toggle menu"
             >
               {open ? <X size={16} /> : <Menu size={16} />}
@@ -91,21 +94,21 @@ export function Navbar() {
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
-            className="md:hidden border-t border-[var(--border)] px-3 py-3 space-y-1"
+            className="md:hidden border-t border-[rgba(255,180,130,0.1)] px-3 py-3 space-y-1 bg-[#140E0A]/95 backdrop-blur-xl rounded-b-2xl"
           >
             {NAV_LINKS.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block px-3 py-2 rounded-xl text-sm font-medium text-[var(--ink)] hover:bg-[var(--surface-2)]"
+                className="block px-3 py-2 rounded-xl text-sm font-medium text-[#FAF5EE] hover:bg-white/8"
               >
                 {l.label}
               </a>
             ))}
             <Link
               to="/login"
-              className="block px-3 py-2 rounded-xl text-sm font-medium text-[var(--ink)] hover:bg-[var(--surface-2)]"
+              className="block px-3 py-2 rounded-xl text-sm font-medium text-[#FAF5EE] hover:bg-white/8"
             >
               Sign in
             </Link>

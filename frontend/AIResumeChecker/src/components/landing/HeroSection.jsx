@@ -21,9 +21,9 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/10 backdrop-blur-md"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-[rgba(255,180,130,0.18)] backdrop-blur-md"
             >
-              <Sparkles size={12} className="text-[#B6CFC0]" />
+              <Sparkles size={12} className="text-[var(--accent-strong)]" />
               <span className="text-[11px] tracking-wide text-white/85 uppercase font-semibold">
                 Now scoring against ATS 2026 criteria
               </span>
@@ -37,11 +37,11 @@ export function HeroSection() {
             >
               Beat the ATS.
               <br />
-              <span className="text-white/50">Land more</span>{" "}
+              <span className="text-white/45">Land more</span>{" "}
               <span
                 style={{
                   backgroundImage:
-                    "linear-gradient(120deg, #B6CFC0 0%, #8FB39C 55%, #5B7C6A 100%)",
+                    "linear-gradient(120deg, #FFB380 0%, #E86A33 55%, #FF7A29 100%)",
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
                   WebkitTextFillColor: "transparent",
@@ -56,7 +56,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="text-white/65 text-base sm:text-lg lg:text-[19px] mt-6 max-w-[540px] leading-relaxed"
+              className="text-[#A4988C] text-base sm:text-lg lg:text-[19px] mt-6 max-w-[540px] leading-relaxed"
             >
               Upload your resume. Get an instant ATS score, fixable issues, and AI-rewritten bullets
               that actually sound like you — built for engineers, by engineers.
@@ -70,10 +70,10 @@ export function HeroSection() {
             >
               <Link
                 to="/register"
-                className="group relative inline-flex items-center gap-2 h-12 px-5 rounded-full font-semibold text-[14px] text-white shadow-[0_10px_30px_-8px_rgba(143,179,156,0.5)] transition-all hover:shadow-[0_14px_36px_-8px_rgba(143,179,156,0.7)] active:scale-[0.98]"
+                className="group relative inline-flex items-center gap-2 h-12 px-6 rounded-full font-semibold text-[14px] text-white shadow-[0_10px_30px_-8px_rgba(232,106,51,0.6)] transition-all hover:shadow-[0_14px_36px_-8px_rgba(232,106,51,0.8)] hover:brightness-110 active:scale-[0.98]"
                 style={{
                   background:
-                    "linear-gradient(135deg, #8FB39C 0%, #5B7C6A 55%, #2F4A3A 100%)",
+                    "linear-gradient(135deg, #FF884D 0%, #E86A33 55%, #C44E1C 100%)",
                 }}
               >
                 <span
@@ -103,7 +103,7 @@ export function HeroSection() {
               className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-8 text-[12px] text-white/55"
             >
               <span className="inline-flex items-center gap-1.5">
-                <ShieldCheck size={13} className="text-[#8FB39C]" />
+                <ShieldCheck size={13} className="text-[var(--accent-strong)]" />
                 No credit card required
               </span>
               <span className="inline-flex items-center gap-1.5">
@@ -117,7 +117,7 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Visual */}
+          {/* Visual Product Showcase */}
           <div className="relative">
             <HeroDashboardPreview />
           </div>

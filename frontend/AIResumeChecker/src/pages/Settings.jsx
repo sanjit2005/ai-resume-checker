@@ -116,7 +116,7 @@ function ThemeOption({ value, label, icon: Icon, current, onSelect }) {
       <div>
         <div className="text-sm font-semibold text-[var(--ink)]">{label}</div>
         <div className="text-[11px] text-[var(--ink-muted)] mt-0.5">
-          {value === "light" ? "Soft, airy, sage tones" : "Calm, low-glare night"}
+          {value === "light" ? "Warm, crisp cream tones" : "Calm, rich espresso dark"}
         </div>
       </div>
       {active && (

@@ -28,7 +28,7 @@ function UploadVisual() {
             412 KB · parsing…
           </div>
         </div>
-        <div className="inline-flex items-center gap-1 h-5 px-2 rounded-full bg-[var(--accent-soft)] text-[var(--accent-strong)] text-[9px] font-semibold">
+        <div className="inline-flex items-center gap-1 h-5 px-2 rounded-full bg-[var(--accent-soft)] text-[var(--accent-strong)] text-[9px] font-semibold border border-[var(--accent)]/20">
           <span className="h-1 w-1 rounded-full bg-[var(--accent)] animate-pulse" />
           live
         </div>
@@ -120,7 +120,7 @@ function DownloadVisual() {
             <div className="mt-auto h-[5px] w-full rounded-[1px] bg-[var(--accent-soft)]" />
           </div>
           <div
-            className="absolute -bottom-1.5 -right-1.5 h-5 px-1.5 rounded-md text-white text-[8px] font-bold flex items-center"
+            className="absolute -bottom-1.5 -right-1.5 h-5 px-1.5 rounded-md text-white text-[8px] font-bold flex items-center shadow-sm"
             style={{
               background:
                 "linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%)",
@@ -137,16 +137,16 @@ function DownloadVisual() {
             ATS-ready · 1 page
           </div>
         </div>
-        <button className="h-9 w-9 rounded-full bg-[var(--ink)] text-[var(--bg)] flex items-center justify-center shrink-0 transition-transform hover:-translate-y-0.5">
+        <button className="h-9 w-9 rounded-full bg-[var(--ink)] text-[var(--bg)] flex items-center justify-center shrink-0 transition-transform hover:-translate-y-0.5 cursor-pointer">
           <FileDown size={13} />
         </button>
       </div>
       <div className="mt-3 pt-3 border-t border-[var(--border)] flex items-center justify-between">
-        <div className="inline-flex items-center gap-1 h-5 px-2 rounded-full bg-[var(--accent-soft)] text-[var(--success)] text-[10px] font-semibold tabular-nums">
+        <div className="inline-flex items-center gap-1 h-5 px-2 rounded-full bg-[var(--accent-soft)] text-[var(--accent-strong)] text-[10px] font-semibold tabular-nums border border-[var(--accent)]/20">
           ATS 86
         </div>
         <div className="text-[10px] text-[var(--ink-muted)] tabular-nums">
-          <span className="text-[var(--success)] font-semibold">+24 pts</span> from V1
+          <span className="text-[var(--accent-strong)] font-semibold">+24 pts</span> from V1
         </div>
       </div>
     </div>
@@ -158,21 +158,21 @@ const STEPS = [
     n: "01",
     icon: Upload,
     title: "Upload your resume",
-    desc: "Drop a PDF or DOCX. We parse it in seconds — no signup wall, no nonsense.",
+    desc: "Drop a PDF. We extract the full text structure in seconds — no signup wall, no hassle.",
     Visual: UploadVisual,
   },
   {
     n: "02",
     icon: Cpu,
-    title: "AI analyzes & roasts",
-    desc: "Gemini scores against ATS rubrics, surfaces 5 issues + 5 strengths, and drafts rewrites.",
+    title: "AI analyzes & refines",
+    desc: "Gemini scores against ATS rubrics, surfaces 5 issues + 5 strengths, and drafts targeted rewrites.",
     Visual: AnalyzeVisual,
   },
   {
     n: "03",
     icon: FileDown,
     title: "Download optimized PDF",
-    desc: "Apply rewrites, save a new version, and export a clean ATS-friendly PDF.",
+    desc: "Apply rewrites, save a new version, and export a clean ATS-friendly PDF ready to apply.",
     Visual: DownloadVisual,
   },
 ];
@@ -187,11 +187,11 @@ export function HowItWorks() {
       <SectionHeader
         eyebrow="How it works"
         title={<>From upload to interview-ready in&nbsp;3 steps.</>}
-        sub="No prompt engineering. No ten-step funnels. Drop, analyze, ship."
+        sub="No prompt engineering. No complex ten-step funnels. Drop, analyze, ship."
       />
 
       <div className="mt-16 relative grid grid-cols-1 lg:grid-cols-3 gap-5">
-        {/* Flowing dashed sage line behind the cards on desktop */}
+        {/* Flowing dashed amber line behind cards on desktop */}
         <svg
           className="hidden lg:block absolute top-[100px] left-0 right-0 w-full pointer-events-none -z-0"
           height="40"
@@ -232,7 +232,7 @@ export function HowItWorks() {
             >
               {/* Card */}
               <div
-                className="relative rounded-[28px] bg-[var(--surface)] border border-[var(--border)] shadow-card hover:shadow-hover transition-all duration-300 hover:-translate-y-1 p-7 overflow-hidden"
+                className="relative rounded-[28px] bg-[var(--surface)] border border-[var(--border)] shadow-card hover:shadow-hover hover:border-[rgba(255,180,130,0.2)] transition-all duration-300 hover:-translate-y-1 p-7 overflow-hidden"
                 style={{ minHeight: 420 }}
               >
                 {/* Top accent line */}
@@ -247,10 +247,10 @@ export function HowItWorks() {
 
                 {/* Massive ghost number */}
                 <div
-                  className="absolute -top-2 right-3 font-display text-[140px] font-bold leading-none tracking-tighter select-none pointer-events-none"
+                  className="absolute -top-2 right-3 font-display text-[140px] font-bold leading-none tracking-tighter select-none pointer-events-none opacity-20"
                   style={{
                     backgroundImage:
-                      "linear-gradient(180deg, var(--accent-soft) 0%, transparent 75%)",
+                      "linear-gradient(180deg, var(--accent-strong) 0%, transparent 80%)",
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
                     color: "transparent",
@@ -262,11 +262,11 @@ export function HowItWorks() {
                 </div>
 
                 {/* Step pill */}
-                <div className="relative inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full bg-[var(--accent-soft)] text-[var(--accent-strong)] text-[10px] font-semibold uppercase tracking-wider">
+                <div className="relative inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full bg-[var(--accent-soft)] text-[var(--accent-strong)] text-[10px] font-semibold uppercase tracking-wider border border-[var(--accent)]/20">
                   Step {s.n}
                 </div>
 
-                {/* Icon with soft glow */}
+                {/* Icon with soft amber glow */}
                 <div className="relative mt-6 inline-block">
                   <div className="absolute -inset-2 rounded-3xl bg-[var(--accent-soft)] blur-lg opacity-70" />
                   <div

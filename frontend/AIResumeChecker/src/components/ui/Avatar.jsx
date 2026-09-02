@@ -13,7 +13,7 @@ export function Avatar({ name, src, size = 40, className }) {
   return (
     <div
       className={cn(
-        "relative inline-flex items-center justify-center rounded-full bg-[var(--accent-soft)] text-[var(--accent-strong)] font-semibold overflow-hidden ring-2 ring-[var(--surface)]",
+        "relative inline-flex items-center justify-center rounded-full bg-[var(--accent-soft)] text-[var(--accent-strong)] font-semibold overflow-hidden ring-2 ring-[var(--surface)] border border-[var(--accent)]/20",
         className
       )}
       style={{ width: size, height: size, fontSize: size * 0.36 }}
